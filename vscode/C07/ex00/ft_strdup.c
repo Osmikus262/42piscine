@@ -1,38 +1,45 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-int	ft_strlen(char *str)
-{
-	int	index;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: osarikay <osarikay@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 12:22:30 by osarikay          #+#    #+#             */
+/*   Updated: 2023/08/03 12:22:33 by osarikay         ###   ########.tr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	index = 0;
-	while (str[index])
-		index++;
-	return (index);
+#include <stdlib.h>
+
+int	ft_str_length(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
 char	*ft_strdup(char *src)
 {
-	int		index;
+	int		i;
 	char	*dest;
-	char	*d;
 
-	index = 0;
-	d = ((dest = (char *)malloc(ft_strlen(src) * sizeof(char) + 1)));
-	if (!d)
+	i = 0;
+	dest = (char *)malloc(ft_str_length(src) * sizeof(char) + 1);
+	if (dest == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
-	while (src[index])
+	while (src[i] != '\0')
 	{
-		dest[index] = src[index];
-		index++;
+		dest[i] = src[i];
+		i++;
 	}
-	dest[index] = '\0';
+	dest[i] = '\0';
 	return (dest);
-}
-int		main(void)
-{
-	char src[] = "Hello World Yes Yes";
-	printf("%s", ft_strdup(src));
 }

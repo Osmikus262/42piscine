@@ -1,5 +1,17 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: osarikay <osarikay@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 12:24:14 by osarikay          #+#    #+#             */
+/*   Updated: 2023/08/03 12:24:16 by osarikay         ###   ########.tr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*s;
@@ -27,3 +39,17 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	s[c] = '\0';
 	return (s);
 }
+/*#include <stdio.h>
+char *ft_strjoin(int size, char **strs, char *sep);
+
+int    main(void)
+{
+    char *text[3];
+
+    text[0] = "taha";
+    text[1] = "martin";
+    text[2] = "deneme";
+
+
+    printf("%s\n", ft_strjoin(3, text, " "));
+}*/
